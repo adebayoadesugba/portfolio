@@ -426,32 +426,32 @@ document.addEventListener('DOMContentLoaded', () => {
       url: 'https://themodernblogger.netlify.app/'
     },
     {
-      title: 'Faro Audio Visualizer',
-      desc: 'Audio-reactive web application synchronizing sound frequency spectrums with real-time GLSL canvas shaders.',
-      stack: ['Web Audio API', 'GLSL', 'Canvas'],
-      img: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=900&auto=format&fit=crop',
-      url: '#'
+      title: 'Zonk Coin',
+      desc: 'A community-powered token built for fun, utility, and innovation.',
+      stack: ['React'],
+      img: 'Images/zonk.png',
+      url: 'https://thezonkcoin.netlify.app/'
     },
     {
-      title: 'Halo Health Telehealth',
-      desc: 'HIPAA-compliant UI system and design framework created for secure telehealth video consultations and electronic charts.',
-      stack: ['React', 'TypeScript', 'Storybook'],
-      img: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=900&auto=format&fit=crop',
-      url: '#'
+      title: 'Shophubs Ecommerce',
+      desc: 'A modern e-commerce platform designed for seamless shopping experiences and efficient inventory management.',
+      stack: [],
+      img: 'Images/shophubs.png',
+      url: 'https://myshophubs.netlify.app/'
     },
     {
-      title: 'Drift Motion Shop',
-      desc: 'Interactive retail storefront utilizing scroll-linked physics engines and smooth custom page transitions.',
-      stack: ['JavaScript', 'GSAP', 'CSS3'],
-      img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=900&auto=format&fit=crop',
-      url: '#'
+      title: 'ADR Justice Firm',
+      desc: 'A responsive law firm website with interactive elements, smooth animations, and a clean, professional design.',
+      stack: [],
+      img: 'Images/adr.png',
+      url: 'https://adebayoadesugba.github.io/ADR-Justice/'
     },
     {
-      title: 'Vertex 3D Showcase',
-      desc: 'Interactive esports platform sporting WebGL 3D trophy showcases and low-latency tournament data feeds.',
-      stack: ['Three.js', 'Vite', 'WebGL'],
-      img: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=900&auto=format&fit=crop',
-      url: '#'
+      title: 'TFC Management',
+      desc: 'Specialize in connecting you with your favorite movie stars and music artists',
+      stack: [],
+      img: 'Images/tfc.png',
+      url: 'https://adebayoadesugba.github.io/TFC-MANAGEMENT/'
     },
     {
       title: 'Solace Generative Visuals',
