@@ -394,7 +394,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const body = encodeURIComponent(bodyLines.join('\n'));
 
       showStatus('Redirecting to your mail client...', false);
-      window.location.href = `mailto:hello@alexrivera.dev?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:adebayoadesugba@gmail.com?subject=${subject}&body=${body}`;
 
       setTimeout(() => form.reset(), 600);
     });
