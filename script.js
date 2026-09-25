@@ -407,21 +407,21 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       title: 'Mood Clothings',
       desc: 'Full-stack e-commerce web platform engineered for real-time inventory management and seamless checkout flows.',
-      stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
+      stack: ['M.E.R.N'],
       img: 'Images/mood.png',
       url: 'https://moodclothings.com'
     },
     {
       title: 'Aether Script',
       desc: 'Technical publication platform centered on cutting-edge AI breakthroughs, agentic architectures, and modern web systems.',
-      stack: ['TypeScript', 'Firebase', 'Next.js', 'Tailwind CSS'],
+      stack: ['TypeScript',],
       img: 'Images/aether.png',
       url: 'https://aetherscript.netlify.app/'
     },
     {
       title: 'Modern Blog',
       desc: 'High-performance headless blog architecture featuring responsive layouts, semantic search, and fluid transitions.',
-      stack: ['React', 'Vite', 'Tailwind CSS'],
+      stack: [],
       img: 'Images/modern.png',
       url: 'https://themodernblogger.netlify.app/'
     },

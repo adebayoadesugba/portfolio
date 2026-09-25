@@ -341,7 +341,7 @@ button{ font-family: inherit; cursor: pointer; }
 /* ---------- About ---------- */
 .about{ position: relative; background: var(--bg-alt); }
 .about-grid{
-  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center;
+  display: grid; grid-template-columns: 1fr; gap: 60px; align-items: center;
   width: 100%;
 }
 .about-heading{ font-size: clamp(1.6rem, 3vw, 2.4rem); line-height: 1.25; margin-bottom: 24px; }
@@ -396,7 +396,7 @@ button{ font-family: inherit; cursor: pointer; }
   gap: 14px;
 }
 .project-card{
-  position: relative; border-radius: 22px; overflow: hidden;
+  position: relative; border-radius: 10px; overflow: hidden;
   background: var(--bg-alt-2); border: 1px solid var(--surface-border);
   aspect-ratio: 3/4;
   transform-style: preserve-3d;
@@ -418,14 +418,8 @@ button{ font-family: inherit; cursor: pointer; }
 /* Darker, richer overlay */
 .project-overlay{
   position: absolute; inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(6, 9, 18, 0.96) 0%,
-    rgba(6, 9, 18, 0.82) 45%,
-    rgba(6, 9, 18, 0.35) 80%,
-    transparent 100%
-  );
-  opacity: 0;
+ background: rgba(3, 5, 12, 0.74);
+  opacity: 10;
   transition: opacity 0.4s var(--ease);
 }
 .project-card:hover .project-overlay{
@@ -434,7 +428,8 @@ button{ font-family: inherit; cursor: pointer; }
 
 /* Text and buttons are hidden until hovered, sliding in seamlessly */
 .project-info{
-  position: absolute; left: 0; right: 0; bottom: 0; padding: 22px;
+  position: absolute; left: 0; right: 0; bottom: 0; 
+  padding: 12px;
   display: flex; flex-direction: column; gap: 10px;
   z-index: 2;
 }
@@ -450,27 +445,28 @@ button{ font-family: inherit; cursor: pointer; }
 
 .project-info h3{ 
   color: #fff; 
-  font-size: 1.1rem;
+  font-size: 12px;
 }
 .project-desc{ 
-  font-size: 0.85rem; 
-  line-height: 1.45;
+  font-size: 0.75rem; 
+  line-height: 1.15;
   color: #D3D8EF; 
   max-width: 34ch; 
 }
 .project-tags{ 
-  display: flex; flex-wrap: wrap; gap: 6px; 
+  display: flex; flex-wrap: wrap; 
+  gap: 6px; 
 }
 .project-tags span{
-  font-size: 0.72rem; padding: 4px 10px; border-radius: 100px;
+  font-size: 0.72rem; padding: 2px 4px; border-radius: 100px;
   background: rgba(255,255,255,0.14); color: #FFFFFF;
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255,255,255,0.1);
 }
 .project-view{
-  align-self: flex-start; margin-top: 6px;
+  align-self: flex-start; margin-top: 4px;
   font-size: 0.8rem; font-weight: 700; color: #06110E;
-  background: var(--teal); padding: 8px 16px; border-radius: 100px;
+  background: var(--teal); padding: 5px 6px; border-radius: 50px;
   display: inline-flex; align-items: center; gap: 6px;
   transition: transform 0.3s var(--ease), background 0.3s, opacity 0.3s;
 }
@@ -606,7 +602,8 @@ button{ font-family: inherit; cursor: pointer; }
   /* .about-grid{ grid-template-columns: 1fr; gap: 40px; text-align: left; } */
   .about-visual{ order: -1; }
   .about-image-frame{ max-width: 320px; margin: 0 auto; }
-  .section-inner{ padding: 90px 22px; }
+  .project-info{ padding: 5px; }
+  .section-inner{ padding: 90px 12px; }
   /* .project-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
