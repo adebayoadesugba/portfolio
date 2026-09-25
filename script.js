@@ -1,7 +1,5 @@
 /* ==========================================================================
-   Alex Rivera — Portfolio interactions
-   Stars canvas, hero parallax, typewriter, theme toggle, scroll-zoom about,
-   reveal-on-scroll, project grid render, lightbox.
+   Adebayo Adesugba — Portfolio interactions
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -71,9 +69,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const subEl = document.getElementById('heroSub');
 
     const eyebrowText = "Hey, I'm Adebayo Adesugba";
-    const line1Text = "I Build A.I Powered Software that";
-    const subText = "Foundational models meet production engineering. I build custom LLMs, RAG architectures, and AI-powered interfaces that reason in real time.";
-    const roles = ['I build A.I Powered Softwares.', 'is Intelligent.', 'react to you.', 'Accelerates your workflow.', 'is alive.'];
+    const line1Text = "Engineering AI systems that";
+    const subText = "Bridge frontier models and production software. I build autonomous AI agents, enterprise RAG systems, and robust web applications designed to perform reliably at scale.";
+    
+    // Grammatically sound endings to "Engineering AI systems that..."
+    const roles = [
+      'think in real time.',
+      'scale without friction.',
+      'reason and automate.',
+      'drive business impact.'
+    ];
 
     if (prefersReducedMotion) {
       eyebrowEl.textContent = eyebrowText;
@@ -95,15 +100,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function typeSub(){
-      typeInto(subEl, subText, 12);
+      typeInto(subEl, subText, 14);
     }
 
     function roleLoop(index = 0){
       const word = roles[index % roles.length];
       let i = 0;
-      const typeSpeed = 65;
-      const holdTime = 1500;
-      const deleteSpeed = 35;
+      const typeSpeed = 60;
+      const holdTime = 1800;
+      const deleteSpeed = 30;
 
       (function typeStep(){
         if (i <= word.length){
@@ -121,13 +126,13 @@ document.addEventListener('DOMContentLoaded', () => {
           i--;
           setTimeout(deleteStep, deleteSpeed);
         } else {
-          setTimeout(() => roleLoop(index + 1), 200);
+          setTimeout(() => roleLoop(index + 1), 220);
         }
       }
     }
 
-    typeInto(eyebrowEl, eyebrowText, 28, () => {
-      typeInto(line1El, line1Text, 32, () => {
+    typeInto(eyebrowEl, eyebrowText, 25, () => {
+      typeInto(line1El, line1Text, 28, () => {
         roleLoop(0);
         typeSub();
       });
@@ -135,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   /* ---------------------------------------------------------------------
-     4. HERO MOUSE / TOUCH PARALLAX (tilt glow + content toward cursor)
+     4. HERO MOUSE / TOUCH PARALLAX
   --------------------------------------------------------------------- */
   (function heroParallaxModule(){
     const hero = document.getElementById('hero');
@@ -148,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function onMove(clientX, clientY){
       const rect = hero.getBoundingClientRect();
-      const relX = (clientX - rect.left) / rect.width - 0.5;   // -0.5 to 0.5
+      const relX = (clientX - rect.left) / rect.width - 0.5;
       const relY = (clientY - rect.top) / rect.height - 0.5;
       targetX = relX;
       targetY = relY;
@@ -160,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
       curY += (targetY - curY) * 0.08;
 
       glow.style.transform = `translate(calc(-50% + ${curX * 90}px), calc(-50% + ${curY * 90}px))`;
-      content.style.transform = `translate(${curX * -22}px, ${curY * -14}px)`;
+      content.style.transform = `translate(${curX * -18}px, ${curY * -12}px)`;
 
       if (Math.abs(targetX - curX) > 0.001 || Math.abs(targetY - curY) > 0.001){
         rafId = requestAnimationFrame(update);
@@ -177,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   /* ---------------------------------------------------------------------
-     5. TWINKLING STARFIELD — canvas, touch/mouse reactive
+     5. STARFIELD CANVAS
   --------------------------------------------------------------------- */
   (function starfieldModule(){
     const canvas = document.getElementById('starCanvas');
@@ -226,16 +231,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const rgb = getStarColor();
 
       for (const s of stars){
-        // twinkle
         const tw = Math.sin(t * s.twinkleSpeed + s.twinklePhase) * 0.5 + 0.5;
         const alpha = s.baseAlpha * (0.35 + tw * 0.65);
 
-        // gentle drift
         s.x += s.driftX + s.vx;
         s.y += s.driftY + s.vy;
         s.vx *= 0.94; s.vy *= 0.94;
 
-        // repel from pointer (mouse or touch)
         if (pointer.active){
           const dx = s.x - pointer.x;
           const dy = s.y - pointer.y;
@@ -248,7 +250,6 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         }
 
-        // wrap around edges
         if (s.x < -10) s.x = w + 10;
         if (s.x > w + 10) s.x = -10;
         if (s.y < -10) s.y = h + 10;
@@ -290,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   /* ---------------------------------------------------------------------
-     6. SCROLL REVEAL — fade/slide elements with [data-reveal]
+     6. SCROLL REVEAL & STATS COUNTER
   --------------------------------------------------------------------- */
   (function revealModule(){
     const items = document.querySelectorAll('[data-reveal]');
@@ -313,9 +314,6 @@ document.addEventListener('DOMContentLoaded', () => {
     items.forEach(el => observer.observe(el));
   })();
 
-  /* ---------------------------------------------------------------------
-     7. ANIMATED COUNTERS — about stats
-  --------------------------------------------------------------------- */
   (function countersModule(){
     const nums = document.querySelectorAll('.stat-num');
     if (!nums.length) return;
@@ -347,12 +345,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   /* ---------------------------------------------------------------------
-     8. CONTACT FORM — validation + mailto submit
-     NOTE: This is a static site, so there's no server to send email from.
-     On submit it validates the fields, then opens the visitor's email app
-     with everything pre-filled. To send silently in the background instead,
-     swap the code inside handleSubmit() for a call to a service like
-     Formspree, EmailJS or your own backend endpoint.
+     7. CONTACT FORM
   --------------------------------------------------------------------- */
   (function contactFormModule(){
     const form = document.getElementById('contactForm');
@@ -386,11 +379,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
       if (!isValidEmail(email)){
-        showStatus('That email address doesn\'t look right.', true);
+        showStatus('Please enter a valid email address.', true);
         return;
       }
 
-      const subject = encodeURIComponent(`New project inquiry from ${name}`);
+      const subject = encodeURIComponent(`Project Inquiry from ${name}`);
       const bodyLines = [
         `Name: ${name}`,
         `Email: ${email}`,
@@ -400,72 +393,70 @@ document.addEventListener('DOMContentLoaded', () => {
       ].filter(Boolean);
       const body = encodeURIComponent(bodyLines.join('\n'));
 
-      showStatus('Opening your email app to send this…', false);
+      showStatus('Redirecting to your mail client...', false);
       window.location.href = `mailto:hello@alexrivera.dev?subject=${subject}&body=${body}`;
 
-      setTimeout(() => {
-        form.reset();
-      }, 600);
+      setTimeout(() => form.reset(), 600);
     });
   })();
 
   /* ---------------------------------------------------------------------
-     9. PROJECT DATA + GRID RENDER
+     8. PROJECTS DATA & DYNAMIC GRID RENDER
   --------------------------------------------------------------------- */
   const projects = [
     {
       title: 'Mood Clothings',
-      desc: 'An E-commerce platform for a clothing brand.',
-      stack: ['Tailwind CSS', 'M.E.R.N',],
+      desc: 'Full-stack e-commerce web platform engineered for real-time inventory management and seamless checkout flows.',
+      stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
       img: 'Images/mood.png',
-      url: ' https://moodclothings.com'
+      url: 'https://moodclothings.com'
     },
     {
       title: 'Aether Script',
-      desc: 'A blog for sharing insights on AI and Technology.',
-      stack: ['TypeScript', 'Firebase', 'Tailwind CSS'],
+      desc: 'Technical publication platform centered on cutting-edge AI breakthroughs, agentic architectures, and modern web systems.',
+      stack: ['TypeScript', 'Firebase', 'Next.js', 'Tailwind CSS'],
       img: 'Images/aether.png',
       url: 'https://aetherscript.netlify.app/'
     },
     {
       title: 'Modern Blog',
-      desc: 'A modern blog frontend built with React and Tailwind CSS.',
-      stack: ['React', 'Tailwind CSS'],
+      desc: 'High-performance headless blog architecture featuring responsive layouts, semantic search, and fluid transitions.',
+      stack: ['React', 'Vite', 'Tailwind CSS'],
       img: 'Images/modern.png',
       url: 'https://themodernblogger.netlify.app/'
     },
     {
-      title: 'Faro Records',
-      desc: 'Audio-reactive visualizer synced to a label\'s new releases.',
-      stack: ['Web Audio API', 'Canvas', 'GLSL'],
+      title: 'Faro Audio Visualizer',
+      desc: 'Audio-reactive web application synchronizing sound frequency spectrums with real-time GLSL canvas shaders.',
+      stack: ['Web Audio API', 'GLSL', 'Canvas'],
       img: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=900&auto=format&fit=crop',
       url: '#'
     },
     {
-      title: 'Halo Health',
-      desc: 'Accessible design system for a telehealth platform.',
+      title: 'Halo Health Telehealth',
+      desc: 'HIPAA-compliant UI system and design framework created for secure telehealth video consultations and electronic charts.',
       stack: ['React', 'TypeScript', 'Storybook'],
       img: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=900&auto=format&fit=crop',
       url: '#'
     },
     {
-      title: 'Drift Coffee',
-      desc: 'Playful e-commerce experience with scroll-triggered motion.',
-      stack: ['Shopify', 'GSAP', 'Liquid'],
+      title: 'Drift Motion Shop',
+      desc: 'Interactive retail storefront utilizing scroll-linked physics engines and smooth custom page transitions.',
+      stack: ['JavaScript', 'GSAP', 'CSS3'],
       img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=900&auto=format&fit=crop',
       url: '#'
     },
     {
-      title: 'Vertex Gaming',
-      desc: 'Esports org site with a real-time 3D trophy showcase.',
-      stack: ['Three.js', 'Vite', 'Blender'],
+      title: 'Vertex 3D Showcase',
+      desc: 'Interactive esports platform sporting WebGL 3D trophy showcases and low-latency tournament data feeds.',
+      stack: ['Three.js', 'Vite', 'WebGL'],
       img: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=900&auto=format&fit=crop',
       url: '#'
     },
     {
-      title: 'Solace Studio',
-      desc: 'Meditation app landing page with ambient generative visuals.',
-      stack: ['React', 'Canvas', 'Framer Motion'],
+      title: 'Solace Generative Visuals',
+      desc: 'Ambient wellness application featuring calm, procedural particle generators and mindful soundscapes.',
+      stack: ['React', 'Framer Motion', 'HTML5 Canvas'],
       img: 'https://images.unsplash.com/photo-1483721310020-03333e577078?q=80&w=900&auto=format&fit=crop',
       url: '#'
     }
@@ -477,21 +468,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     grid.innerHTML = projects.map((p, i) => `
       <article class="project-card" data-index="${i}">
-        <img src="${p.img}" alt="${p.title} preview" loading="lazy">
+        <img src="${p.img}" alt="${p.title}" loading="lazy">
         <div class="project-overlay"></div>
         <div class="project-info">
           <h3>${p.title}</h3>
           <p class="project-desc">${p.desc}</p>
           <div class="project-tags">${p.stack.map(s => `<span>${s}</span>`).join('')}</div>
           <a class="project-view" href="${p.url}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
-            View project
+            View Project
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
           </a>
         </div>
       </article>
     `).join('');
 
-    // Click card image opens quick preview lightbox
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxClose = document.getElementById('lightboxClose');
