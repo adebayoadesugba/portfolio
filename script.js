@@ -70,10 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const typedEl = document.getElementById('typedText');
     const subEl = document.getElementById('heroSub');
 
-    const eyebrowText = "Hey, I'm Alex Rivera";
-    const line1Text = "I design experiences that";
-    const subText = "Front-end engineering meets real-time 3D — I build brand sites, product launches and interactive experiments that feel alive.";
-    const roles = ['move.', 'glow.', 'react to you.', 'feel real.'];
+    const eyebrowText = "Hey, I'm Adebayo Adesugba";
+    const line1Text = "I Build A.I Powered Software that";
+    const subText = "Foundational models meet production engineering. I build custom LLMs, RAG architectures, and AI-powered interfaces that reason in real time.";
+    const roles = ['I build A.I Powered Softwares.', 'is Intelligent.', 'react to you.', 'Accelerates your workflow.', 'is alive.'];
 
     if (prefersReducedMotion) {
       eyebrowEl.textContent = eyebrowText;
