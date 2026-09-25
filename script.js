@@ -414,18 +414,18 @@ document.addEventListener('DOMContentLoaded', () => {
   --------------------------------------------------------------------- */
   const projects = [
     {
-      title: 'Nebula Studio',
-      desc: 'A WebGL-driven agency site with a real-time particle hero.',
-      stack: ['Three.js', 'React', 'GSAP'],
-      img: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=900&auto=format&fit=crop',
-      url: '#'
+      title: 'Mood Clothings',
+      desc: 'An E-commerce platform for a clothing brand.',
+      stack: ['Tailwind CSS', 'M.E.R.N',],
+      img: 'Images/mood.png',
+      url: ' https://moodclothings.com'
     },
     {
-      title: 'Pulse Finance',
-      desc: 'Fintech dashboard redesign with animated data storytelling.',
-      stack: ['Next.js', 'D3.js', 'Framer Motion'],
-      img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=900&auto=format&fit=crop',
-      url: '#'
+      title: 'Aether Script',
+      desc: 'A blog for sharing insights on AI and Technology.',
+      stack: ['TypeScript', 'Firebase', 'Tailwind CSS'],
+      img: 'Images/aether.png',
+      url: 'https://aetherscript.netlify.app/'
     },
     {
       title: 'Aurora Wearables',
