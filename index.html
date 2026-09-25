@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Adebayo Adesubga — Software Developer &amp; A.I Engineer</title>
+<meta name="description" content="Portfolio of Adebayo Adesubga, Software developer and A.I Engineer.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dark">
+
+<!-- Grain / noise overlay for texture -->
+<div class="grain" aria-hidden="true"></div>
+
+<!-- Custom cursor glow -->
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">A<span class="dot">.</span>R</a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#about" data-nav>About</a>
+      <a href="#work" data-nav>Work</a>
+      <a href="#skills" data-nav>Skills</a>
+      <a href="#contact" data-nav>Contact</a>
+      <a href="cv.pdf" target="_blank" rel="noopener" class="nav-resume">Resume</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu overlay -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" data-nav>About</a>
+  <a href="#work" data-nav>Work</a>
+  <a href="#skills" data-nav>Skills</a>
+  <a href="#contact" data-nav>Contact</a>
+  <a href="cv.pdf" target="_blank" rel="noopener" data-nav>Resume</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <canvas id="starCanvas" class="star-canvas"></canvas>
+  <div class="hero-glow" id="heroGlow" aria-hidden="true"></div>
+
+  <div class="hero-content" id="heroContent">
+    <p class="hero-eyebrow" id="heroEyebrow"></p>
+    <h1 class="hero-title">
+      <span class="line" id="heroLine1"></span>
+      <span class="line accent" id="typedRole"><span id="typedText"></span><span class="caret">|</span></span>
+    </h1>
+    <p class="hero-sub" id="heroSub"></p>
+
+    <div class="hero-cta">
+      <a href="#work" class="btn btn-primary"><span>View my work</span></a>
+      <a href="#contact" class="btn btn-ghost"><span>Let's talk</span></a>
+    </div>
+
+    <!-- Replace cv.pdf with your own resume file, kept in the same folder as index.html -->
+    <div class="hero-resume">
+      <a href="cv.pdf" target="_blank" rel="noopener" class="resume-link">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        View CV
+      </a>
+      <a href="cv.pdf" download class="resume-link">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
+        Download CV
+      </a>
+    </div>
+  </div>
+
+  <button class="scroll-cue" id="scrollCue" aria-label="Scroll down">
+    <span class="scroll-cue-line"></span>
+    <span class="scroll-cue-text">Scroll</span>
+  </button>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="section-inner about-inner">
+    <div class="about-grid">
+
+      <div class="about-text" data-reveal>
+        <p class="section-tag">About me</p>
+        <h2 class="about-heading">I build interfaces that feel like they have weight, light and motion — not just pixels.</h2>
+        <p class="about-body">
+          I'm Alex, a creative developer and 3D motion designer based between the browser and the render queue.
+          For the last seven years I've been fusing front-end engineering with real-time 3D, motion design and
+          sound to build products people remember using.
+        </p>
+        <p class="about-body">
+          My work sits at the intersection of design systems and WebGL — brand sites, product launches and
+          interactive experiments for studios and startups who want their site to feel alive, not templated.
+        </p>
+
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-num" data-count="7">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Years crafting</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-count="46">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Projects shipped</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-count="18">0</span>
+            <span class="stat-label">Awards &amp; features</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-visual" data-reveal>
+        <div class="about-image-frame">
+          <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1200&auto=format&fit=crop" alt="Alex Rivera at work">
+          <div class="about-image-overlay"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="skills" id="skills">
+  <div class="section-inner">
+    <p class="section-tag" data-reveal>Toolbox</p>
+    <h2 class="skills-heading" data-reveal>Stack &amp; craft</h2>
+
+    <div class="skills-grid" data-reveal>
+      <div class="skill-card">
+        <h3>MERN Stack</h3>
+        <div class="skill-chips">
+          <span>MongoDB</span><span>Express.js</span><span>React</span><span>Node.js</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Python &amp; AI Engineering</h3>
+        <div class="skill-chips">
+          <span>Python</span><span>AI Engineering</span><span>Machine Learning</span><span>Automation</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Front-end Tooling</h3>
+        <div class="skill-chips">
+          <span>TypeScript</span><span>Tailwind CSS</span><span>Next.js</span><span>Vite</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Testing &amp; Tools</h3>
+        <div class="skill-chips">
+          <span>Selenium</span><span>Git</span><span>Docker</span><span>Figma</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK / PROJECTS ============ -->
+<section class="work" id="work">
+  <div class="section-inner">
+    <p class="section-tag" data-reveal>Selected work</p>
+    <h2 class="work-heading" data-reveal>Things I've shipped</h2>
+
+    <div class="project-grid" id="projectGrid">
+      <!-- Cards injected by script.js -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="section-inner contact-inner">
+    <div class="contact-card" data-reveal>
+      <p class="section-tag">Get in touch</p>
+      <h2 class="contact-heading">Got a project in mind?<br>Let's build something with weight.</h2>
+      <p class="contact-body">Open to freelance collaborations, full-time roles and the occasional wild experiment.</p>
+
+      <div class="contact-actions">
+        <a href="mailto:hello@alexrivera.dev" class="btn btn-primary"><span>hello@alexrivera.dev</span></a>
+        <div class="social-row">
+          <a href="#" aria-label="GitHub">GitHub</a>
+          <a href="#" aria-label="LinkedIn">LinkedIn</a>
+          <a href="#" aria-label="Dribbble">Dribbble</a>
+          <a href="#" aria-label="Twitter / X">Twitter</a>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <p class="form-heading">Or send a message directly</p>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="cfName">Name</label>
+            <input type="text" id="cfName" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-field">
+            <label for="cfEmail">Email</label>
+            <input type="email" id="cfEmail" name="email" placeholder="you@email.com" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="cfPhone">Phone <span class="optional">(optional)</span></label>
+            <input type="tel" id="cfPhone" name="phone" placeholder="+1 000 000 0000">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="cfMessage">Message</label>
+          <textarea id="cfMessage" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary form-submit"><span id="formBtnText">Send message</span></button>
+        <p class="form-status" id="formStatus" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Alex Rivera. Built with glass, light and too much coffee.</p>
+  </footer>
+</section>
+
+<!-- ============ FULLSCREEN PROJECT VIEWER (optional zoom-out overlay) ============ -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
