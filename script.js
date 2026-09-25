@@ -501,3 +501,55 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
 });
+
+const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('formStatus');
+const formBtnText = document.getElementById('formBtnText');
+let statusTimeout; // Variable to track the timer
+
+// Helper function to handle the animation and timing
+function showStatus(message, isSuccess) {
+  formStatus.textContent = message;
+  formStatus.style.color = isSuccess ? "#4ade80" : "#ef4444";
+  
+  // Trigger the slide-up/fade-in animation
+  formStatus.classList.add('show');
+
+  // Reset the timer if it's already running
+  if (statusTimeout) {
+    clearTimeout(statusTimeout);
+  }
+
+  // Remove the class after 10 seconds to fade it out
+  statusTimeout = setTimeout(() => {
+    formStatus.classList.remove('show');
+  }, 10000); 
+}
+
+contactForm.addEventListener('submit', async function(e) {
+  e.preventDefault(); 
+  
+  formBtnText.textContent = "Sending...";
+  const data = new FormData(e.target);
+  
+  try {
+    const response = await fetch(e.target.action, {
+      method: contactForm.method,
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+    
+    if (response.ok) {
+      showStatus("Message sent successfully! I'll get back to you soon.", true);
+      contactForm.reset();
+    } else {
+      showStatus("Oops! There was a problem submitting your form.", false);
+    }
+  } catch (error) {
+    showStatus("Oops! Network error. Please try again later.", false);
+  } finally {
+    formBtnText.textContent = "Send Message"; 
+  }
+});
