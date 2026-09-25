@@ -428,11 +428,11 @@ document.addEventListener('DOMContentLoaded', () => {
       url: 'https://aetherscript.netlify.app/'
     },
     {
-      title: 'Aurora Wearables',
-      desc: 'Product launch site with a 3D configurator built in Three.js.',
-      stack: ['Three.js', 'WebGL', 'Blender'],
-      img: 'https://images.unsplash.com/photo-1526178613658-3f1622045557?q=80&w=900&auto=format&fit=crop',
-      url: '#'
+      title: 'Modern Blog',
+      desc: 'A modern blog frontend built with React and Tailwind CSS.',
+      stack: ['React', 'Tailwind CSS'],
+      img: 'Images/modern.png',
+      url: 'https://themodernblogger.netlify.app/'
     },
     {
       title: 'Faro Records',
