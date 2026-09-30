@@ -1,247 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Adebayo Adesugba — Software Engineer &amp; AI Engineer</title>
-<meta name="description" content="Portfolio of Adebayo Adesugba, Software Engineer and AI Engineer specializing in LLMs, RAG, and distributed systems.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Adebayo — Full-Stack Developer &amp; AI Systems</title>
+  <meta name="description" content="Portfolio of Adebayo Adesugba. Building brands, scalable websites, and intelligent systems.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Editorial Typography: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<link rel="icon" href="data:,">
-<link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body data-theme="dark">
 
-<!-- Grain / noise overlay for texture -->
-<div class="grain" aria-hidden="true"></div>
-
-<!-- Custom cursor glow -->
-<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
-
-<!-- ============ NAV ============ -->
-<header class="nav" id="siteNav">
-  <div class="nav-inner">
-    <a href="#hero" class="nav-logo">A<span class="dot">.</span>A</a>
-
-    <nav class="nav-links" id="navLinks">
-      <a href="#about" data-nav>About</a>
-      <a href="#work" data-nav>Work</a>
-      <a href="#skills" data-nav>Skills</a>
-      <a href="#contact" data-nav>Contact</a>
-      <a href="cv.pdf" target="_blank" rel="noopener" class="nav-resume">Resume</a>
-    </nav>
-
-    <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      </button>
-      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</header>
-
-<!-- Mobile menu overlay -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#about" data-nav>About</a>
-  <a href="#work" data-nav>Work</a>
-  <a href="#skills" data-nav>Skills</a>
-  <a href="#contact" data-nav>Contact</a>
-  <a href="cv.pdf" target="_blank" rel="noopener" data-nav>Resume</a>
-</div>
-
-<!-- ============ HERO ============ -->
-<section class="hero" id="hero">
-  <canvas id="starCanvas" class="star-canvas"></canvas>
-  <div class="hero-glow" id="heroGlow" aria-hidden="true"></div>
-
-  <div class="hero-content" id="heroContent">
-    <p class="hero-eyebrow" id="heroEyebrow"></p>
-    <h1 class="hero-title">
-      <span class="line" id="heroLine1"></span>
-      <span class="line accent" id="typedRole"><span id="typedText"></span><span class="caret">|</span></span>
-    </h1>
-    <p class="hero-sub" id="heroSub"></p>
-
-    <div class="hero-cta">
-      <a href="#work" class="btn btn-primary"><span>View my work</span></a>
-      <a href="#contact" class="btn btn-ghost"><span>Let's talk</span></a>
-    </div>
-
-    <div class="hero-resume">
-      <a href="Documents/Adesugba-Resume.pdf" target="_blank" rel="noopener" class="resume-link">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-        View CV
+  <!-- ============ NAVIGATION ============ -->
+  <header class="site-header" id="siteNav">
+    <div class="header-container">
+      <a href="#hero" class="brand-logo" aria-label="Adebayo home">
+        <svg class="brand-svg" width="34" height="34" viewBox="0 0 40 40" fill="none">
+          <path d="M6 34L20 6L34 34H26L20 18L14 34H6Z" fill="currentColor"/>
+        </svg>
       </a>
-      <a href="Documents/Adesugba-Resume.pdf" download class="resume-link">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
-        Download CV
-      </a>
+
+      <nav class="nav-desktop">
+        <a href="#about" class="nav-item">About <span class="nav-plus">+</span></a>
+        <a href="#services" class="nav-item">Services <span class="nav-plus">+</span></a>
+        <a href="#brands" class="nav-item">Experience</a>
+        <a href="#work" class="nav-item">Work</a>
+        <a href="#contact" class="nav-item">Contact</a>
+      </nav>
+
+      <div class="nav-tools">
+        <button class="theme-switch" id="themeToggle" aria-label="Toggle theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="#contact" class="btn-action">START PROJECT <span>&rarr;</span></a>
+        <button class="burger-btn" id="burger" aria-label="Open navigation menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-links">
+      <a href="#about" class="drawer-link">About</a>
+      <a href="#services" class="drawer-link">Services</a>
+      <a href="#brands" class="drawer-link">Experience</a>
+      <a href="#work" class="drawer-link">Work</a>
+      <a href="#contact" class="drawer-link">Contact</a>
+      <a href="#contact" class="drawer-btn">Start Project &rarr;</a>
     </div>
   </div>
 
-  <button class="scroll-cue" id="scrollCue" aria-label="Scroll down">
-    <span class="scroll-cue-line"></span>
-    <span class="scroll-cue-text">Scroll</span>
-  </button>
-</section>
-
-<!-- ============ ABOUT ============ -->
-<section class="about" id="about">
-  <div class="section-inner about-inner">
-    <div class="about-grid">
-
-      <div class="about-text" data-reveal>
-        <p class="section-tag">About Me</p>
-        <h2 class="about-heading">Software Engineer &amp; AI Architect specializing in production LLMs and intelligent workflows.</h2>
-        <p class="about-body">
-          Bridging the gap between deep machine learning research and resilient production software. I architect end-to-end applications powered by foundational models—taking intelligence out of experimental notebooks and deploying it directly into live infrastructure.
+  <main>
+    <!-- ============ HERO SECTION ============ -->
+    <section class="hero-section" id="hero">
+      <div class="hero-layout">
+        <h1 class="hero-heading scroll-pop">
+          Building brands and websites<br>
+          <span class="hero-typewrite-wrap">
+            that <span id="heroTypedText"></span><span class="type-cursor">|</span>
+          </span>
+        </h1>
+        <p class="hero-tagline scroll-pop delay-1">
+          Adebayo is a Lagos-based software engineer and full-stack developer specialising in high-performance digital products, responsive web apps, and intelligent architectures.
         </p>
-        <p class="about-body">
-          My work spans enterprise Retrieval-Augmented Generation (RAG) pipelines, autonomous task agents, custom model fine-tuning, and scalable full-stack web applications. I turn complex domain knowledge into fast, reliable, and high-impact digital systems.
-        </p>
+        <div class="hero-actions scroll-pop delay-2">
+          <a href="#work" class="btn-hero-explore">LEARN MORE <span>&rarr;</span></a>
+        </div>
+      </div>
+    </section>
 
-        <div class="about-stats">
-          <div class="stat">
-            <span class="stat-num" data-count="2">0</span><span class="stat-plus">+</span>
-            <span class="stat-label">Years of Craft</span>
+    <!-- ============ SERVICES / DIGITAL SERVICES ============ -->
+    <section class="services-section" id="services">
+      <div class="container">
+        <div class="section-lead scroll-pop">
+          <h2 class="lead-title">Brand and digital services</h2>
+          <p class="lead-desc">A connected approach to brand and digital, shaped by strategy, clarity, and long-term usability.</p>
+        </div>
+
+        <div class="service-cards-grid">
+          <article class="service-card scroll-pop delay-1">
+            <span class="service-pill">Digital</span>
+            <h3 class="service-title">Website Design</h3>
+            <p class="service-body">Purposeful websites shaped for clarity, flow, and launch. Engineered for all devices with maximum speed and responsive finesse.</p>
+            <a href="#work" class="service-bottom-link">EXPLORE SERVICE <span>&rarr;</span></a>
+          </article>
+
+          <article class="service-card scroll-pop delay-2">
+            <span class="service-pill">Design &amp; AI</span>
+            <h3 class="service-title">Branding</h3>
+            <p class="service-body">Distinct brand systems built for recognition and rollout. Blending clean visual design systems with high-converting user funnels.</p>
+            <a href="#brands" class="service-bottom-link">EXPLORE SERVICE <span>&rarr;</span></a>
+          </article>
+
+          <article class="service-card scroll-pop delay-3">
+            <span class="service-pill">Ongoing Support</span>
+            <h3 class="service-title">Maintenance</h3>
+            <p class="service-body">Ongoing site care, API scaling, performance audits, and continuous optimization to keep modern web systems reliable.</p>
+            <a href="#contact" class="service-bottom-link">EXPLORE SERVICE <span>&rarr;</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SELECTED BRAND EXPERIENCE (ROTATING 10 LOGOS IN 4 BOXES) ============ -->
+    <section class="brand-exp-section" id="brands">
+      <div class="container">
+        <p class="exp-eyebrow scroll-pop">• SELECTED BRAND EXPERIENCE</p>
+
+        <div class="brand-grid">
+          <!-- Box 1 -->
+          <div class="brand-box scroll-pop delay-1" data-box-index="0">
+            <div class="brand-box-inner" id="brandBox0">
+              <span class="brand-name">DAYSHEET</span>
+            </div>
           </div>
-          <div class="stat">
-            <span class="stat-num" data-count="20">0</span><span class="stat-plus">+</span>
-            <span class="stat-label">Solutions Shipped</span>
+          <!-- Box 2 -->
+          <div class="brand-box scroll-pop delay-2" data-box-index="1">
+            <div class="brand-box-inner" id="brandBox1">
+              <span class="brand-name">FORTEM PROJECTS</span>
+            </div>
           </div>
-          <div class="stat">
-            <span class="stat-num" data-count="3">0</span><span class="stat-plus">+</span>
-            <span class="stat-label">Certifications</span>
+          <!-- Box 3 -->
+          <div class="brand-box scroll-pop delay-3" data-box-index="2">
+            <div class="brand-box-inner" id="brandBox2">
+              <span class="brand-name">L A V O</span>
+            </div>
+          </div>
+          <!-- Box 4 -->
+          <div class="brand-box scroll-pop delay-4" data-box-index="3">
+            <div class="brand-box-inner" id="brandBox3">
+              <span class="brand-name">X + O STUDIO</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="brand-foot-row">
+          <span>• PORTFOLIO</span>
+          <span>(01 / 08)</span>
+          <span>SELECTED WORK</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PORTFOLIO / SELECTED WORK ============ -->
+    <section class="work-section" id="work">
+      <div class="container">
+        <div class="section-lead scroll-pop">
+          <h2 class="lead-title">Featured Case Studies</h2>
+          <p class="lead-desc">Recent platforms, client applications, and interfaces engineered for impact.</p>
+        </div>
+
+        <div class="portfolio-grid" id="projectGrid">
+          <!-- Dynamically injected via script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT SECTION ============ -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-layout">
+          <div class="about-copy scroll-pop">
+            <span class="service-pill">Philosophy</span>
+            <h2 class="about-headline">Establishing trust through visual precision and scalable engineering.</h2>
+            <p class="about-text">
+              I am Adebayo, a developer operating across the intersection of clean digital aesthetics and full-stack software architecture. From bespoke user experiences to enterprise-grade web applications, my craft centers on fast, reliable, and thoughtful execution.
+            </p>
+            <div class="stats-row">
+              <div class="stat-unit">
+                <span class="stat-val" data-target="2">0</span><span class="plus">+</span>
+                <span class="stat-sub">Years Experience</span>
+              </div>
+              <div class="stat-unit">
+                <span class="stat-val" data-target="20">0</span><span class="plus">+</span>
+                <span class="stat-sub">Websites &amp; Systems</span>
+              </div>
+              <div class="stat-unit">
+                <span class="stat-val" data-target="100">0</span><span class="plus">%</span>
+                <span class="stat-sub">Performance Scored</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-image-card scroll-pop delay-2">
+            <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1200&auto=format&fit=crop" alt="Adebayo Workspace">
+            <div class="about-overlay-info">
+              <p class="caption-title">Making the code match the standard of the design</p>
+              <p class="caption-sub">A strong system shouldn't exaggerate the work; it should reflect it.</p>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="about-visual" data-reveal>
-        <div class="about-image-frame">
-          <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1200&auto=format&fit=crop" alt="Adebayo Adesugba workspace">
-          <div class="about-image-overlay"></div>
+    <!-- ============ CONTACT SECTION ============ -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-wrapper">
+          <div class="contact-side scroll-pop">
+            <h2 class="contact-title">Get in touch</h2>
+            <p class="contact-sub">
+              Use the contact form for general enquiries, or request a quote for your next digital build.
+            </p>
+
+            <div class="direct-details">
+              <div class="direct-item">
+                <span class="direct-label">Email</span>
+                <a href="mailto:adebayoadesugba@gmail.com" class="direct-val">adebayoadesugba@gmail.com</a>
+              </div>
+              <div class="direct-item">
+                <span class="direct-label">Phone</span>
+                <a href="tel:+2348000000000" class="direct-val">+234 (Available on request)</a>
+              </div>
+              <div class="direct-item">
+                <span class="direct-label">Follow</span>
+                <div class="direct-socials">
+                  <a href="https://github.com/adebayoadesugba/" target="_blank" rel="noopener">GitHub</a>
+                  <a href="https://www.linkedin.com/in/adebayo-p-adesugba-2b223b376" target="_blank" rel="noopener">LinkedIn</a>
+                  <a href="https://x.com/OnlythisBizzle" target="_blank" rel="noopener">Twitter / X</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-side scroll-pop delay-2">
+            <form class="editorial-form" id="contactForm" action="https://formspree.io/f/xlgaqzpz" method="POST" novalidate>
+              <div class="form-row-split">
+                <div class="field-item">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="field-item">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="Email address" required>
+                </div>
+              </div>
+
+              <div class="field-item">
+                <label for="reason">Reason for enquiry</label>
+                <div class="custom-select-wrap">
+                  <select id="reason" name="reason">
+                    <option value="New Website Design">New Website Design</option>
+                    <option value="Full-Stack Web Application">Full-Stack Web Application</option>
+                    <option value="Branding & System Architecture">Branding & System Architecture</option>
+                    <option value="Ongoing Maintenance">Ongoing Maintenance</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field-item">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="How can I help?" required></textarea>
+              </div>
+
+              <div class="form-checkbox-row">
+                <input type="checkbox" id="terms" required checked>
+                <label for="terms">I accept the standard project terms &amp; conditions</label>
+              </div>
+
+              <button type="submit" class="btn-submit" id="submitBtn">
+                <span>SEND ENQUIRY</span>
+                <span class="btn-arrow">&rarr;</span>
+              </button>
+
+              <div class="form-feedback" id="formStatus" aria-live="polite"></div>
+            </form>
+          </div>
         </div>
       </div>
+    </section>
+  </main>
 
+  <!-- ============ FOOTER (EDITORIAL GIANT LOGO) ============ -->
+  <footer class="editorial-footer">
+    <div class="container footer-top-row">
+      <div class="footer-ack">
+        <p>Adebayo Adesugba — Digital designer and full-stack software engineer crafting clean, resilient interfaces across the globe.</p>
+      </div>
+      <div class="footer-nav-columns">
+        <div class="footer-col">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#work">Work</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <a href="#services">Website Design</a>
+          <a href="#services">Branding</a>
+          <a href="#services">Maintenance</a>
+          <a href="https://github.com/adebayoadesugba/" target="_blank" rel="noopener">Open Source</a>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
 
-<!-- ============ SKILLS ============ -->
-<section class="skills" id="skills">
-  <div class="section-inner">
-    <p class="section-tag" data-reveal>Toolbox</p>
-    <h2 class="skills-heading" data-reveal>Stack &amp; Capabilities</h2>
-
-    <div class="skills-grid" data-reveal>
-      <div class="skill-card">
-        <h3>AI &amp; Machine Learning</h3>
-        <div class="skill-chips">
-          <span>Python</span><span>LangChain</span><span>LlamaIndex</span><span>RAG Pipelines</span><span>Vector DBs</span><span>OpenAI / Anthropic APIs</span><span>Hugging Face</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <h3>Full-Stack Engineering</h3>
-        <div class="skill-chips">
-          <span>React</span><span>Node.js</span><span>Next.js</span><span>TypeScript</span><span>Express.js</span><span>MongoDB</span><span>PostgreSQL</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <h3>Front-end &amp; Design</h3>
-        <div class="skill-chips">
-          <span>Tailwind CSS</span><span>Modern JavaScript</span><span>Vite</span><span>Responsive Design</span><span>Figma</span>
-        </div>
-      </div>
-      <!-- <div class="skill-card">
-        <h3>DevOps &amp; Architecture</h3>
-        <div class="skill-chips">
-          <span>Git / GitHub</span><span></span><span>REST &amp; GraphQL APIs</span><span>Microservices</span><span>CI/CD</span>
-        </div>
-      </div> -->
+    <!-- OVERSCALED EDITORIAL NAME -->
+    <div class="giant-name-wrapper">
+      <span class="giant-name-text">ADEBAYO</span>
     </div>
-  </div>
-</section>
 
-<!-- ============ WORK / PROJECTS ============ -->
-<section class="work" id="work">
-  <div class="section-inner">
-    <p class="section-tag" data-reveal>Selected Work</p>
-    <h2 class="work-heading" data-reveal>Projects</h2>
-
-    <div class="project-grid" id="projectGrid">
-      <!-- Cards rendered dynamically via script.js -->
-    </div>
-  </div>
-</section>
-
-<!-- ============ CONTACT ============ -->
-<section class="contact" id="contact">
-  <div class="section-inner contact-inner">
-    <div class="contact-card" data-reveal>
-      <p class="section-tag">Get in Touch</p>
-      <h2 class="contact-heading">Got a vision to build?<br>Let's engineer something great.</h2>
-      <p class="contact-body">Open to discussing enterprise AI solutions, full-stack builds, and high-impact engineering roles.</p>
-
-      <div class="contact-actions">
-        <a href="mailto:adebayoadesugba@gmail.com" class="btn btn-primary"><span>adebayoadesugba@gmail.com</span></a>
-        <div class="social-row">
-          <a href="https://github.com/adebayoadesugba/" aria-label="GitHub">GitHub</a>
-          <a href="https://www.linkedin.com/in/adebayo-p-adesugba-2b223b376
-
-" aria-label="LinkedIn">LinkedIn</a>
-          <a href="https://x.com/OnlythisBizzle" aria-label="Twitter">Twitter / X</a>
-        </div>
+    <div class="container footer-bottom-meta">
+      <p>&copy; <span id="currentYear"></span> Adebayo Adesugba. All rights reserved.</p>
+      <div class="footer-sub-links">
+        <a href="#hero">Privacy Policy</a>
+        <a href="#hero">Terms and Conditions</a>
+        <span>Lagos, Nigeria</span>
       </div>
-
-      <form class="contact-form" id="contactForm" action="https://formspree.io/f/xlgaqzpz" method="POST" novalidate>
-        <p class="form-heading">Or send a message directly</p>
-
-        <div class="form-row">
-          <div class="form-field">
-            <label for="cfName">Name</label>
-            <input type="text" id="cfName" name="name" placeholder="Your name" required>
-          </div>
-          <div class="form-field">
-            <label for="cfEmail">Email</label>
-            <input type="email" id="cfEmail" name="email" placeholder="you@example.com" required>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-field">
-            <label for="cfPhone">Phone <span class="optional">(optional)</span></label>
-            <input type="tel" id="cfPhone" name="phone" placeholder="+1 (555) 000-0000">
-          </div>
-        </div>
-
-        <div class="form-field">
-          <label for="cfMessage">Message</label>
-          <textarea id="cfMessage" name="message" rows="5" placeholder="Tell me about your project, goals, or timeline..." required></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-primary form-submit"><span id="formBtnText">Send Message</span></button>
-        <p class="form-status" id="formStatus" aria-live="polite"></p>
-      </form>
     </div>
-  </div>
-
-  <footer class="footer">
-    <p>&copy; <span id="year"></span> Adebayo Adesugba. All rights reserved.</p>
   </footer>
-</section>
 
-<!-- ============ FULLSCREEN LIGHTBOX ============ -->
-<div class="lightbox" id="lightbox" aria-hidden="true">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">&times;</button>
-  <img id="lightboxImg" src="" alt="">
-</div>
+  <!-- Lightbox Modal -->
+  <div class="editorial-lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close-btn" id="lightboxClose" aria-label="Close modal">&times;</button>
+    <div class="lightbox-frame">
+      <img id="lightboxImg" src="" alt="Enlarged preview">
+    </div>
+  </div>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
