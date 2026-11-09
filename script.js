@@ -112,6 +112,14 @@ document.addEventListener('DOMContentLoaded', () => {
   --------------------------------------------------------------------- */
   const projects = [
     {
+      title: 'Intervue You',
+      category: 'AI / LLM',
+      desc: 'AI Powered Interview Platform, Using LLMs for Enhanced Candidate Evaluation.',
+      date: 'Sep 2026',
+      img: 'Images/intervue.png',
+      url: 'https://intervue-you.netlify.app/'
+    },
+    {
       title: 'Mood Clothings',
       category: 'E-Commerce / Architecture',
       desc: 'Full-stack retail system with real-time stock sync and Paystack payment processing.',
